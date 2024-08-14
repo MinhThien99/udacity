@@ -1,0 +1,93 @@
+<mat-card class="example-form p-0">
+    <mat-card-content class="example-form">
+      <h2>Order Information</h2>
+      <mat-divider class="border-solid"></mat-divider>
+      <form (ngSubmit)="submitForm()" #form="ngForm">
+        <mat-form-field class="w-full">
+          <mat-label>Full name</mat-label>
+          <input
+            type="text"
+            #fullNameValidate="ngModel"
+            name="fullName"
+            matInput
+            placeholder=""
+            [(ngModel)]="fullName"
+            (ngModelChange)="handleFullNameChange($event)"
+            required
+          />
+        </mat-form-field>
+        <div *ngIf="fullNameValidate.invalid && fullNameValidate.dirty">
+          <h4 class="text-red-600">Full name is required</h4>
+        </div>
+        <mat-form-field class="w-full">
+          <mat-label>Email</mat-label>
+          <input
+            type="text"
+            #emailValidate="ngModel"
+            name="email"
+            matInput
+            placeholder=""
+            [(ngModel)]="email"
+            (ngModelChange)="handleEmailChange($event)"
+            email
+            required
+          />
+        </mat-form-field>
+        <div *ngIf="emailValidate.invalid && emailValidate.dirty">
+          <h4 class="text-red-600">Email is wrong format.</h4>
+        </div>
+        <mat-form-field class="w-full">
+          <mat-label>Phone number</mat-label>
+          <input
+            type="text"
+            #phoneValidate="ngModel"
+            name="phoneNumber"
+            matInput
+            placeholder=""
+            [(ngModel)]="phoneNumber"
+            (ngModelChange)="handlePhoneNumberChange($event)"
+            required
+            minlength="8"
+          />
+        </mat-form-field>
+        <div *ngIf="phoneValidate.invalid && phoneValidate.dirty">
+          <h4 class="text-red-600">Phone number is required and at least 8 numbers.</h4>
+        </div>
+        <mat-form-field class="w-full">
+          <mat-label>Address</mat-label>
+          <input
+            type="text"
+            #addressValidate="ngModel"
+            name="address"
+            matInput
+            placeholder=""
+            [(ngModel)]="address"
+            (ngModelChange)="handleAddressChange($event)"
+            minlength="20"
+            required
+          />
+        </mat-form-field>
+        <div *ngIf="addressValidate.invalid && addressValidate.dirty">
+          <h4 class="text-red-600">Address is required and at least 20 characters.</h4>
+        </div>
+        <mat-form-field class="w-full">
+          <mat-label>Note</mat-label>
+          <input
+            type="text"
+            name="note"
+            matInput
+            placeholder=""
+            [(ngModel)]="note"
+            (ngModelChange)="handleNoteChange($event)"
+          />
+        </mat-form-field>
+  
+        <div class="flex justify-center">
+          <button mat-raised-button class="self-center" [disabled]="form.invalid">
+            <input mat-raised-button placeholder="" value="Create Order" type="submit" required />
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

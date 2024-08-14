@@ -1,0 +1,44 @@
+<div class="container space-y-5">
+   
+    <div class="flex justify-center mt-10"><mat-icon>star</mat-icon><h2>Thank for your order!</h2><mat-icon>star</mat-icon></div>
+    <mat-card class="example-form p-0">
+        <mat-card-content class="example-form ">
+            <h2>Order {{order.id}}</h2>
+            <hr/>
+          
+<table class="w-full text-left">
+    <tr>
+      <td>Customer name:</td>
+      <td>{{order.fullName}}</td>
+    </tr>
+    <tr>
+        <td>Phone number:</td>
+        <td>{{order.phoneNumber}}</td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td>{{order.address}}</td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>{{order.email}}</td>
+      </tr>
+      <tr>
+        <td>Note:</td>
+        <td>{{order.note}}</td>
+      </tr>
+  </table>
+  
+          
+       
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="example-form p-0">
+        <mat-card-content class="example-form ">
+            <h2>Item</h2>
+            <hr/>
+            <app-cart-table [cart]="order.cart" [showAction]="false"></app-cart-table>
+
+        </mat-card-content>
+    </mat-card>
+</div>

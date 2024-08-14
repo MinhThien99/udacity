@@ -1,0 +1,14 @@
+<mat-toolbar class="header justify-between size-5">
+    <button> <a routerLink="/">
+            <h1>MY STORE</h1>
+        </a></button>
+    <button class=" rounded-full w-9 h-9">
+        <a routerLink="cart" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <mat-icon [matBadge]="cart.length">shopping_cart</mat-icon>
+        </a>
+    </button>
+</mat-toolbar>
+
+<div class="container mx-auto px-4">
+    <router-outlet />
+</div>

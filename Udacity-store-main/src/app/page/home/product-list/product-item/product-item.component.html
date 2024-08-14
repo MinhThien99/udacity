@@ -1,0 +1,20 @@
+<mat-card class="example-card p-2 m-5">
+  <a [routerLink]="['/product', product.id]">
+    <img
+      mat-card-image
+      class="max-h-50 rounded-lg"
+      [src]="product.url"
+      alt="{{ product.name }}"
+    />
+  </a>
+  <mat-card-header class="justify-center">
+    <mat-card-title>{{ product.name }}</mat-card-title>
+    <hr />
+    <mat-card-title>${{ product.price }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-actions class="justify-center">
+    <button mat-icon-button class="border-2 rounded-lg" (click)="onClickAdd()">
+      Add to cart <mat-icon>shopping_cart_checkout</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

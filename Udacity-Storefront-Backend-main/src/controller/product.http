@@ -1,0 +1,20 @@
+@accesstoken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZmlyc3RfbmFtZSI6InVzZXIiLCJsYXN0X25hbWUiOiJ1c2VyIiwicGFzc3dvcmQiOiIkMmIkMTAkWG50RjhsQVFKTVB0V1ZqbXYvRmJUdWRtQzMyOE5haUNVLmZUZHJ5NkdRMGxiZUdIWXdraU8iLCJpYXQiOjE3MTE3ODMxMzUsImV4cCI6MTcxMTgwMTEzNX0.JsZRKZv4j1hJ1igJCh7bU2Pu83fcARJ9MHILUkhmr5s
+
+POST http://127.0.0.1:3000/api/product
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{accesstoken}}
+
+{
+    "name" : "Xiaomi pad 6",
+    "price" : 2000,
+  "category": ["Xiaomi"]
+}
+
+ 
+###
+GET http://127.0.0.1:3000/api/product
+
+###
+
+GET http://127.0.0.1:3000/api/product/2
